@@ -97,7 +97,7 @@
         }
       }
 
-      const activityArray = await getData(`https://www.strava.com/api/v3/athlete/activities?per_page=100;`);
+//      const activityArray = await getData(`https://www.strava.com/api/v3/athlete/activities?per_page=100;`);
       const activityData = await all(...activityArray.map(x => () => getData(`https://www.strava.com/api/v3/activities/${x.id}`)));
 
       const segments = activityData.reduce((acc, curr) => {
